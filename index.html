@@ -1,1 +1,22 @@
-<h1>Auth Callback Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auth Callback</title>
+</head>
+<body>
+    <p>正在返回 App，请稍候...</p>
+    <script>
+        // 1. 获取 Google 挂在 URL 后面的参数（如 ?code=xxx）
+        const queryString = window.location.search;
+        
+       
+        const appScheme = "auth-test://redirect" + queryString;
+        window.location.href = appScheme;
+
+        
+        setTimeout(() => {
+            document.body.innerHTML = "<p>如果您没有自动返回 App，请手动切回 App，或者确保在手机中打开此页面。</p>";
+        }, 2000);
+    </script>
+</body>
+</html>
